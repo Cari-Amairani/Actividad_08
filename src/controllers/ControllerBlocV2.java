@@ -19,7 +19,7 @@ import model.ModelBloc;
 import view.ViewBloc;
 
 
-public class ControllerBloc implements ActionListener{
+public class ControllerBlocV2 implements ActionListener{
     
     private  ModelBloc modelBloc; //llamar la clase modelo que contiene las variables
     private  ViewBloc viewBloc; //llama a la vista
@@ -27,7 +27,7 @@ public class ControllerBloc implements ActionListener{
     File archivo;
     FileOutputStream salida;
     
-    public ControllerBloc(ModelBloc modelBloc, ViewBloc viewBloc){
+    public ControllerBlocV2(ModelBloc modelBloc, ViewBloc viewBloc){
         this.modelBloc = modelBloc;
         this.viewBloc = viewBloc;
         
@@ -65,12 +65,12 @@ File a;
             b=new FileReader(a); //lee el contenido del fichero
             viewBloc.jTA_BlocNotas.read(b, ""); //muestra el contenido del fichero en el jtextarea en la parte de la vista 
         } catch (Exception ex){
-            Logger.getLogger(ControllerBloc.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerBlocV2.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             try{
                 b.close();
             }catch(IOException ex){
-                Logger.getLogger(ControllerBloc.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerBlocV2.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
        

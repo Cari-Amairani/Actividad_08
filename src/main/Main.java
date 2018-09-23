@@ -5,7 +5,7 @@
  */
 package main;
 
-import controllers.ControllerBloc;
+import controllers.ControllerBlocV2;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,7 +53,7 @@ public void readFile(String path){
         
         ModelBloc modelBloc = new ModelBloc();
          ViewBloc viewBloc = new ViewBloc();
-         ControllerBloc controllerBloc = new ControllerBloc(modelBloc, viewBloc);
+         ControllerBlocV2 controllerBloc = new ControllerBlocV2(modelBloc, viewBloc);
         
          controllerBloc.iniciar_vista();
          viewBloc.setVisible(true);
