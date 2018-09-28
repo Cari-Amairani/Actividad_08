@@ -79,21 +79,11 @@ File a;
  }
 
     private void jMI_Guardar_action_performed() {
-        JFileChooser fileChooser = new JFileChooser(); //Se crea el objeto FileChooser
-        int seleccion= fileChooser.showSaveDialog(viewBloc.jTA_BlocNotas);//Se abre la ventaa, guardamos la opcion seleccionada
-        if(seleccion==JFileChooser.APPROVE_OPTION){ //Se evalua si el usuario preciona el boton aceptar
-            File fichero=fileChooser.getSelectedFile();//Seleccionamos el fichero
-            try(FileWriter fileWriter = new FileWriter(fichero)){
-                fileWriter.write(viewBloc.jTA_BlocNotas.getText());//Escribir el texto en el fichero
-            } catch (IOException e){
-                e.printStackTrace();
-            }
+         modelBloc.setMessage(viewBloc.jTA_BlocNotas.getText()); 
+    this.writeFile(modelBloc.getPath(), modelBloc.getMessage());
         }
-        
-     
-        
-    }
-
+    
+    
     public void initView() {
         viewBloc.setLocationRelativeTo(null);
         viewBloc.jTA_BlocNotas.setText(modelBloc.getMenu());
@@ -112,4 +102,5 @@ File a;
        }
         return null;
     }
+
 }

@@ -9,6 +9,27 @@ package model;
 
 public class ModelBloc {
     
+    private String path = " "; 
+
+    public String getPath() {
+        return path;
+    }
+    public void setPath(String path) {
+        this.path = path;
+    }
+    
+        
+    //Guarda el contenido 
+    private String message = ""; 
+
+    public String getMessage() {
+        return message;
+    }
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    
     private String leer;
     private String guardar;
     private String menu;
